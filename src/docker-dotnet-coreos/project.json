@@ -27,7 +27,7 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "YamlDotNet.NetCore": "1.0.0",
+    "YamlDotNet": "4.0.0",
     "NetEscapades.Configuration.Yaml": "1.2.0"
   },
   "tools": {
