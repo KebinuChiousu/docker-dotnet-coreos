@@ -37,10 +37,34 @@ namespace docker_dotnet_coreos.Controllers
       cloud_config.coreos.etcd2.listen_dash_client_dash_urls = "http://0.0.0.0:2379,http://0.0.0.0:4001";
       cloud_config.coreos.etcd2.listen_dash_peer_dash_urls = "http://$private_ipv4:2380,http://$private_ipv4:7001";
 
+      cloud_config.InitUsers();
 
+      var user1 = new CloudConfigUser();
 
-      //cloud_config.hostname = "coreos01";
-                  
+      user1.InitGroups();
+
+      user1.name = "meredithk";
+      user1.gecos = "Kevin Meredith";
+
+      user1.groups.Add("sudo");
+      user1.groups.Add("docker");
+
+      cloud_config.users.Add(user1);
+
+      var user2 = new CloudConfigUser();
+
+      user2.InitGroups();
+
+      user2.name = "rancher";
+      user2.gecos = "Rancher System Account";
+
+      user2.groups.Add("sudo");
+      user2.groups.Add("docker");
+
+      cloud_config.users.Add(user2);
+
+      cloud_config.hostname = "coreos01";
+
       StringWriter strWriter = new StringWriter();
       String output;
 
