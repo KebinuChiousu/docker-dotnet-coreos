@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.25920.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7BF7B7F4-B557-483E-BC25-0B6B59B4FE1C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E3C2BD06-8228-4CCB-8877-C770E6999CD7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC081B30-DA18-4101-A141-6CEAB7FBB042}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docker-dotnet-coreos", "src\docker-dotnet-coreos\docker-dotnet-coreos.csproj", "{6A9C14BF-BA44-47F6-9886-7868C245EDFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C27F3097-F66E-4251-A06C-A21A4AFAA77E}"
 	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
+		docker-compose.ci.build.yml = docker-compose.ci.build.yml
 	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "docker-dotnet-coreos", "src\docker-dotnet-coreos\docker-dotnet-coreos.xproj", "{F0E71251-D772-4734-B307-BF31D8A9DB69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,15 +18,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F0E71251-D772-4734-B307-BF31D8A9DB69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0E71251-D772-4734-B307-BF31D8A9DB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0E71251-D772-4734-B307-BF31D8A9DB69}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0E71251-D772-4734-B307-BF31D8A9DB69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A9C14BF-BA44-47F6-9886-7868C245EDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A9C14BF-BA44-47F6-9886-7868C245EDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A9C14BF-BA44-47F6-9886-7868C245EDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A9C14BF-BA44-47F6-9886-7868C245EDFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F0E71251-D772-4734-B307-BF31D8A9DB69} = {7BF7B7F4-B557-483E-BC25-0B6B59B4FE1C}
+		{6A9C14BF-BA44-47F6-9886-7868C245EDFC} = {E3C2BD06-8228-4CCB-8877-C770E6999CD7}
 	EndGlobalSection
 EndGlobal

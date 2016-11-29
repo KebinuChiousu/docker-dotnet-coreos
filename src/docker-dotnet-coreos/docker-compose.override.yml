@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  docker-dotnet-coreos:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

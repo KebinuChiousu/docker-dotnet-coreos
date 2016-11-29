@@ -1,2 +1,4 @@
-docker-compose.yml
-Dockerfile
+*
+!bin/Release/PublishOutput/*
+!obj/Docker/publish/*
+!obj/Docker/empty/

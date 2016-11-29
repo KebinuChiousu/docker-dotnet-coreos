@@ -2,9 +2,9 @@ version: '2'
 
 services:
   docker-dotnet-coreos:
-    image: user/docker-dotnet-coreos${TAG}
+    image: user/docker-dotnet-coreos
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "80"
+      args:
+        source: ${DOCKER_BUILD_SOURCE}
