@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 public class CloudConfig
 {
@@ -12,7 +10,7 @@ public class CloudConfig
 
   public void InitUsers()
   {
-    users = new _users();
+    users = new List<CloudConfigUser>();
   }
 
   public void InitWriteFiles()
@@ -29,33 +27,11 @@ public class CloudConfig
   
   public List<string> ssh_authorized_keys { get; set; }
 
-  public _users users { get; set; }
+  public List<CloudConfigUser> users { get; set; }
 
   public List<_write_files> write_files { get; set; }
 
   public _coreos coreos { get; set; }
-
-  public class _users
-  {
-
-    public void InitSshAuthKey()
-    {
-      ssh_authorized_keys = new List<string>();
-    }
-
-    public string name { get; set; }
-    public string gecos { get; set; }
-    public string passwd { get; set; }
-    public string homedir { get; set; }
-    public Boolean no_dash_create_dash_home { get; set; }
-    public string primary_dash_group { get; set; }
-    public List<string> groups { get; set; }
-    public Boolean no_dash_user_dash_group { get; set; }
-    public List<string> ssh_authorized_keys { get; set; }
-    public string system { get; set; }
-    public Boolean no_dash_log_dash_init { get; set; }
-    public string shell { get; set; } 
-  }  
 
   public class _write_files
   {
@@ -165,7 +141,7 @@ public class CloudConfig
 
       public void InitDropIns()
       {
-        drop_dash_ins = new List<drop_ins>();
+        drop_dash_ins = new List<CloudConfigDropIns>();
       }
 
       public string name { get; set; }
@@ -174,7 +150,7 @@ public class CloudConfig
       public List<string> content { get; set; }
       public string command { get; set; }
       public Boolean mask { get; set; }
-      public List<drop_ins> drop_dash_ins { get; set; }
+      public List<CloudConfigDropIns> drop_dash_ins { get; set; }
 
     }
     
@@ -182,69 +158,3 @@ public class CloudConfig
        
 }
 
-public class drop_ins
-{
-  public drop_ins()
-  {
-    content = new List<string>();
-  }
-
-  public string name { get; set; }
-  public List<string> content { get; set; }
-}
-
-
-public class CloudConfigBuilder
-{
-
-  void BuildCloudConfig()
-{
-
-  var cloud_config = new
-  {
-    ssh_authorized_keys = new[]
-        {
-          "ssh-rsa"
-        },
-    hostname = "coreos01",
-    users = new[]
-        {
-          new
-          {
-            name = "meredithk",
-            gecos = "Kevin Meredith",
-            groups = new []
-            {
-              "sudo",
-              "docker"
-            },
-            ssh_authorized_keys = new []
-                {
-                   "ssh-rsa"
-                }
-
-          },
-          new
-          {
-            name = "rancher",
-            gecos = "Rancher System Account",
-            groups = new []
-            {
-              "sudo",
-              "docker"
-            },
-            ssh_authorized_keys = new []
-                {
-                   "ssh-rsa"
-                }
-
-          }
-
-        }
-
-  };
-
-}
-
-
-}
